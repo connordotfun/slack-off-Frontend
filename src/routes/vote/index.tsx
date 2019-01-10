@@ -47,7 +47,7 @@ export default class Vote extends Component<Props, State> {
 
     private async _getNewPairing() {
         const res = await fetch(`//${this.API_HOST}/new_pairing`)
-        const items = JSON.parse(JSON.parse(await res.text()))
+        const items = await res.json()
         this.setState(() => ({currentPairing: items as [Pin, Pin]})) 
     }
 }
