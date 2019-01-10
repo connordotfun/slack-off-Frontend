@@ -1,0 +1,33 @@
+.card {
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: white;
+    width: 30%;
+    display: grid;
+    grid-row-gap: 15px;
+    grid-template-rows: 1fr 70px;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "file content"
+                         "vote vote";
+}
+
+.image {
+    box-sizing: border-box;
+    padding: 0 10px;
+    max-width: 100%;
+    display: block;
+    grid-area: file;
+}
+
+.message {
+    min-width: 200px;
+    grid-area: content;
+    word-wrap: anywhere;
+}
+
+.vote-button {
+    cursor: pointer;
+    grid-area: vote;
+    background-color: red;
+    color: white;
+}

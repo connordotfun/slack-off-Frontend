@@ -1,7 +1,7 @@
 interface Pin {
     author: string,
     channel: string,
-    created: number, // timestamp
+    file: string
     text: string,
     id: string
 }
