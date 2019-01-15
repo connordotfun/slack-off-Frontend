@@ -12,7 +12,7 @@ const Card: FunctionalComponent<CardProps> = ({pin, submitVote, ...props}) => (
     <div className={style.card}>
         {pin.file !== '' ? <img src={pin.file} class={style.image}/> : null}
         {/* yes, this is bad practice. however, it allows us to display slack messages as intended, so... maybe it's fine? */}
-        {pin.text !== '' ? <div class={style.message}><span dangerouslySetInnerHTML={{__html: slackdown.parse(pin.text)}} /></div> : null }
+        {pin.text !== '' ? <div class={style.message}><span dangerouslySetInnerHTML={{__html: slackdown.parse('&ldquo;' + pin.text)}} /></div> : null }
         <div class={style.voteButton} onClick={submitVote}>VOTE</div>
     </div>
 )

@@ -30,7 +30,7 @@ export default class Vote extends Component<Props, State> {
                 <div class={style.vote}>
                     <div className={style.pairing}>
                         <Card pin={currentPairing[0]} submitVote={() => this._voteFor(0)} />
-                        <div className="vs">VS</div>
+                        <div className={style.vs}>VS</div>
                         <Card pin={currentPairing[1]} submitVote={() => this._voteFor(1)} />
                     </div>
                 </div>

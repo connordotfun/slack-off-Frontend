@@ -1,7 +1,7 @@
 import { Component, h } from "preact";
 import { Route, Router, RouterOnChangeArgs } from "preact-router";
 
-import Home from "../routes/home";
+
 import Vote from '../routes/vote';
 
 if ((module as any).hot) {
@@ -19,8 +19,7 @@ export default class App extends Component {
         return (
             <div id="app">
                 <Router onChange={this.handleRoute}>
-                    <Route path="/" component={Home} />
-                    <Route path="/vote" component={Vote} />
+                    <Route path="/" component={Vote} />
                 </Router>
             </div>
         );

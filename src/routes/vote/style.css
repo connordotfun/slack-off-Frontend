@@ -1,10 +1,16 @@
 .vote {
 	min-height: 100%;
 	width: 100%;
-	background: blue;
+	background: #e8e8e8;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.vs {
+	font-family: balboa;
+	font-weight: 900;
+	font-size: 90px;
 }
 
 .pairing {

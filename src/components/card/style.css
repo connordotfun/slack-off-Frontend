@@ -5,11 +5,43 @@
     width: 30%;
     display: grid;
     grid-row-gap: 15px;
-    grid-template-rows: 1fr 70px;
-    grid-template-columns: auto 1fr;
-    grid-template-areas: "file content"
-                         "vote vote";
+    grid-template-rows: auto auto 50px;
+    grid-template-columns: 1fr;
+    grid-template-areas: "file"
+                         "content"
+                         "vote";
+    border-image: linear-gradient(
+        45deg,
+        hsl(0, 100%, 64%),
+        hsl(46, 100%, 64%),
+        hsl(61, 100%, 64%),
+        hsl(130, 100%, 64%),
+        hsl(183, 100%, 64%),
+        hsl(244, 100%, 64%),
+        hsl(295, 100%, 64%)
+    );
+    border-style: solid;
+    border-width: 5px;
+    border-image-slice: 3;
+    // https://codepen.io/nohoid/pen/kIfto
 }
+
+
+.card:hover {
+    border-image: linear-gradient(
+        225deg,
+        hsl(0, 100%, 64%),
+        hsl(46, 100%, 64%),
+        hsl(61, 100%, 64%),
+        hsl(130, 100%, 64%),
+        hsl(183, 100%, 64%),
+        hsl(244, 100%, 64%),
+        hsl(295, 100%, 64%)
+    );
+
+    border-image-slice: 3;
+}
+
 
 .image {
     box-sizing: border-box;
@@ -26,8 +58,14 @@
 }
 
 .vote-button {
+    font-family: balboa;
+    font-size: 24px;
     cursor: pointer;
     grid-area: vote;
-    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(0, 100%, 64%);
+    border-radius: 3px;
     color: white;
 }
