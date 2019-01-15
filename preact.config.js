@@ -1,4 +1,5 @@
 import { resolve } from "path";
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
 
 export default function(config, env, helpers) {
     // Switch css-loader for typings-for-css-modules-loader, which is a wrapper
@@ -25,6 +26,18 @@ export default function(config, env, helpers) {
         "src",
         "index"
     );
+
+    const uglifyJsPlugin = helpers.getPluginsByName(config, 'UglifyJsPlugin')[0];
+	if (uglifyJsPlugin) {
+		const { index } = uglifyJsPlugin;
+		// console.info(`helpers.getPluginsByName(config, 'UglifyJsPlugin'): ${JSON.stringify(helpers.getPluginsByName(config, 'UglifyJsPlugin'))}`);
+		// console.info(`index: ${index}`);
+		// console.info(`before config.plugins: ${JSON.stringify(config.plugins[index])}`);
+		// console.info(`before config.plugins.length: ${JSON.stringify(config.plugins.length)}`);
+		config.plugins.splice(index, 1, new UglifyJsPlugin());
+		// console.info(`after config.plugins: ${JSON.stringify(config.plugins[index])}`);
+		// console.info(`after config.plugins.length: ${JSON.stringify(config.plugins.length)}`);
+	}
 
     return config;
 }
