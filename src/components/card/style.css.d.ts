@@ -2,4 +2,5 @@
 export const card: string;
 export const image: string;
 export const message: string;
+export const pinText: string;
 export const voteButton: string;
